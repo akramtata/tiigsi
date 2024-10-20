@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer>
+      // Toggle function for mobile menu
+      function toggleMenu() {
+          const menu = document.getElementById('mobile-menu');
+          menu.classList.toggle('hidden');
+      }
+  </script>
+    <link href="./output.css" rel="stylesheet">
+
+    <style>
+         @keyframes fadeIn {
+            0% {
+                opacity: 0; /* Start with invisible */
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1; /* Fully visible */
+                transform: translateY(0);
+            }
+        }
+
+        h1 span {
+            opacity: 0; /* Start with transparent */
+            visibility: hidden; /* Initially hidden */
+        }
+
+        .visible {
+            opacity: 1; /* Fully visible */
+            visibility: visible; /* Make it visible */
+            animation: fadeIn 0.5s forwards; /* Fade-in animation */
+        }
+    </style>
+    
+    
+</head>
+<body class="bg-gray-50">
+
+    <!-- Header -->
+    <header class="flex items-center justify-between px-6 md:px-10 py-4 bg-white shadow-lg">
+        <!-- Left section with logo -->
+        <div class="flex items-center space-x-4 md:space-x-8">
+            <!-- Logo with left margin -->
+            <div class="ml-2 md:ml-6">
+                <img src="../img/logo.png" alt="Logo" class="h-12">
+            </div>
+    
+            <!-- Category and Search icons (hidden on mobile and tablet, visible on desktop) -->
+            <div class="hidden md:flex items-center space-x-3">
+                <img src="../img/category.png" alt="Category" class="h-6">
+                <img src="../img/search.png" alt="Search" class="h-5 w-5">
+            </div>
+        </div>
+    
+        <!-- Hamburger Menu (visible only on mobile and tablet) -->
+        <div class="flex md:hidden items-center">
+            <button onclick="toggleMenu()" class="text-gray-600 focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    
+        <!-- Right section: Login button (hidden on small screens) -->
+        <div class="hidden md:flex items-center space-x-6">
+            <button class="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition">Login</button>
+        </div>
+    </header>
+    
+
+     <!-- Hero Section -->
+     <section class="relative bg-gray-200 flex items-center justify-start p-6 md:p-12 bg-cover bg-center" style="height: 600px; background-image: url('../img/marta.jpg');">
+        <div class="max-w-xl ml-4 md:ml-12">
+            <!-- Animated Text Sequence -->
+            <h1 class="text-3xl md:text-5xl font-bold text-gray-800 mb-4 md:mb-6">
+                <span class="visible">Learn,</span>
+                <span>Experience,</span>
+                <span>Innovate,</span>
+                <span>Baro,</span>
+                <span>Khibrad,</span>
+                <span>Hal Abuur.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-600 mb-4 md:mb-8">Learning made at your fingertips.</p>
+            <a href="" class="bg-white text-black px-6 md:px-8 py-2 md:py-3 rounded-full hover:bg-slate-300">
+                Introducing Onsite Bootcamps
+            </a>
+        </div>
+    </section>
+
+
+    <!-- Courses Section -->
+    <section class="px-10 py-20">
+        <h2 class="text-3xl font-bold text-gray-800 mb-10">Most loved courses</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Course Card 1 -->
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+                <img src="../img/cctv.jpg" alt="CCTV Cameras" class="h-40 w-full object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">CCTV Cameras</h3>
+                    <p class="text-gray-600 mb-4">$10.00</p>
+                    <a href="#" class="text-blue-500 hover:underline">Learn more</a>
+                </div>
+            </div>
+
+            <!-- Course Card 2 -->
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+                <img src="../img/computer unlock.jpg" alt="Computer Unlocking" class="h-40 w-full object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Computer Unlocking</h3>
+                    <p class="text-gray-600 mb-4">$10.00</p>
+                    <a href="#" class="text-blue-500 hover:underline">Learn more</a>
+                </div>
+            </div>
+
+            <!-- Course Card 3 -->
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+                <img src="../img/office.png" alt="Computer Application" class="h-40 w-full object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Computer Application</h3>
+                    <p class="text-gray-600 mb-4">$10.00</p>
+                    <a href="#" class="text-blue-500 hover:underline">Learn more</a>
+                </div>
+            </div>
+
+            <!-- Course Card 4 -->
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+                <img src="../img/networking.jpg" alt="Networking Essentials" class="h-40 w-full object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Networking Essentials</h3>
+                    <p class="text-gray-600 mb-4">$10.00</p>
+                    <a href="#" class="text-blue-500 hover:underline">Learn more</a>
+                </div>
+            </div>
+
+            <!-- Course Card 5 -->
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+                <img src="../img/graphics.jpg" alt="Advanced Graphic Design" class="h-40 w-full object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Advanced Graphic Design</h3>
+                    <p class="text-gray-600 mb-4">$10.00</p>
+                    <a href="#" class="text-blue-500 hover:underline">Learn more</a>
+                </div>
+            </div>
+
+            <!-- Course Card 6 -->
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+                <img src="../img/finger.jpg" alt="Fingerprint Scanner" class="h-40 w-full object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Fingerprint Scanner</h3>
+                    <p class="text-gray-600 mb-4">$10.00</p>
+                    <a href="#" class="text-blue-500 hover:underline">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- hot-new courses -->
+    
+<section class="course-card-section px-10 py-20 bg-gray-100">
+    <h2 class="course-card-title text-3xl font-bold text-gray-800 mb-10">Hot & New Courses</h2>
+    <div class="course-card-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Course Card 1 -->
+        <div class="course-card bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+            <img src="../img/architecture.png" alt="Architecture Post Production Photoshop" class="course-card-image h-48 w-full object-cover">
+            <div class="course-card-body p-6">
+                <h3 class="course-card-name text-xl font-bold mb-2">Architecture Post Production Photoshop</h3>
+                <p class="course-card-price text-gray-600 mb-4">$20.00</p>
+                <a href="#" class="course-card-link text-blue-500 hover:underline">Learn more</a>
+            </div>
+        </div>
+
+        <!-- Course Card 2 -->
+        <div class="course-card bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+            <img src="../img/sql.png" alt="SQL Database" class="course-card-image h-48 w-full object-cover">
+            <div class="course-card-body p-6">
+                <h3 class="course-card-name text-xl font-bold mb-2">The Complete SQL Database Course</h3>
+                <p class="course-card-price text-gray-600 mb-4">$15.00</p>
+                <a href="#" class="course-card-link text-blue-500 hover:underline">Learn more</a>
+            </div>
+        </div>
+
+        <!-- Course Card 3 -->
+        <div class="course-card bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+            <img src="../img/design logo.png" alt="Design Like a Pro with Canva" class="course-card-image h-48 w-full object-cover">
+            <div class="course-card-body p-6">
+                <h3 class="course-card-name text-xl font-bold mb-2">Design Like a Pro with Canva</h3>
+                <p class="course-card-price text-gray-600 mb-4">$10.00</p>
+                <a href="#" class="course-card-link text-blue-500 hover:underline">Learn more</a>
+            </div>
+        </div>
+
+        <!-- Course Card 4 -->
+        <div class="course-card bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+            <img src="../img/pharmacology.png" alt="Fundamentals of Pharmacology III" class="course-card-image h-48 w-full object-cover">
+            <div class="course-card-body p-6">
+                <h3 class="course-card-name text-xl font-bold mb-2">Fundamentals of Pharmacology III</h3>
+                <p class="course-card-price text-gray-600 mb-4">$10.00</p>
+                <a href="#" class="course-card-link text-blue-500 hover:underline">Learn more</a>
+            </div>
+        </div>
+
+        <!-- Course Card 5 -->
+        <div class="course-card bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+            <img src="../img/nextJS.png" alt="React and NextJS Bootcamp" class="course-card-image h-48 w-full object-cover">
+            <div class="course-card-body p-6">
+                <h3 class="course-card-name text-xl font-bold mb-2">React and NextJS Bootcamp</h3>
+                <p class="course-card-price text-gray-600 mb-4">$15.00</p>
+                <a href="#" class="course-card-link text-blue-500 hover:underline">Learn more</a>
+            </div>
+        </div>
+
+          <!-- Course Card 6 -->
+          <div class="course-card bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+            <img src="../img/mobile.png" alt="React and NextJS Bootcamp" class="course-card-image h-48 w-full object-cover">
+            <div class="course-card-body p-6">
+                <h3 class="course-card-name text-xl font-bold mb-2">Cup Cut Mobile Video Editing</h3>
+                <p class="course-card-price text-gray-600 mb-4">$15.00</p>
+                <a href="#" class="course-card-link text-blue-500 hover:underline">Learn more</a>
+            </div>
+        </div>       
+    </div>
+</section>
+
+<!-- best selling -->
+
+<section class="px-10 py-50 bg-gray-100">
+  <h2 class="text-3xl font-bold text-gray-800 mb-10">Best Selling Courses</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Card 1 -->
+      <div class="bg-white shadow-md rounded-lg p-6 hover:shadow-xl transition transform hover:-translate-y-2">
+          <img src="../hot/tiigsi.png" alt="Advanced Graphic Design" class="mb-4 rounded-lg h-40 w-full object-cover">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Advanced Graphic Design: Adobe Photoshop CC</h3>
+          <p class="text-gray-600 mb-4">$10.00</p>
+          <a href="#" class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition">Enroll Now</a>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white shadow-md rounded-lg p-6 hover:shadow-xl transition transform hover:-translate-y-2">
+          <img src="../hot/office.png" alt="Computer Application" class="mb-4 rounded-lg h-40 w-full object-cover">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Computer Application</h3>
+          <p class="text-gray-600 mb-4">$10.00</p>
+          <a href="#" class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition">Enroll Now</a>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white shadow-md rounded-lg p-6 hover:shadow-xl transition transform hover:-translate-y-2">
+          <img src="../hot/cctv.png" alt="CCTV Cameras" class="mb-4 rounded-lg h-40 w-full object-cover">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">CCTV Cameras</h3>
+          <p class="text-gray-600 mb-4">$10.00</p>
+          <a href="#" class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition">Enroll Now</a>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bg-white shadow-md rounded-lg p-6 hover:shadow-xl transition transform hover:-translate-y-2">
+          <img src="../hot/lock.png" alt="Computer Unlocking" class="mb-4 rounded-lg h-40 w-full object-cover">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Computer Unlocking</h3>
+          <p class="text-gray-600 mb-4">$10.00</p>
+          <a href="#" class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition">Enroll Now</a>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="bg-white shadow-md rounded-lg p-6 hover:shadow-xl transition transform hover:-translate-y-2">
+          <img src="../hot/pr.png" alt="Adobe Premiere Pro" class="mb-4 rounded-lg h-40 w-full object-cover">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Adobe Premiere Pro CC</h3>
+          <p class="text-gray-600 mb-4">$10.00</p>
+          <a href="#" class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition">Enroll Now</a>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="bg-white shadow-md rounded-lg p-6 hover:shadow-xl transition transform hover:-translate-y-2">
+          <img src="../hot/scanner.png" alt="Fingerprint Scanner" class="mb-4 rounded-lg h-40 w-full object-cover">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Fingerprint Scanner Essential Training</h3>
+          <p class="text-gray-600 mb-4">$10.00</p>
+          <a href="#" class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition">Enroll Now</a>
+      </div>
+  </div>
+
+    <!-- buttonada -->
+    <div class="text-center mt-8">
+      <p class="text-gray-600"><span class="text-blue-500">*Good to know!</span> You are not limited to the sample courses above.</p>
+      <a href="#" class="mt-4 inline-block bg-white text-orange-500 font-semibold py-3 px-6 rounded-lg transition duration-300 ease-in-out hover:bg-orange-500 hover:text-white border-2 border-orange-500 shadow-lg p-4">
+        Explore Course Library
+      </a>
+    </div>
+  </section>
+
+  <!-- bootcamp section -->
+
+    <section class="py-12 px-4">
+        <div class="text-start mb-10 ml-7">
+            <h2 class="text-3xl font-bold text-gray-800">
+                <i class="fas fa-book"></i> Introducing On-site Bootcamps!
+            </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+            <!-- Card 1 -->
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+                <img src="../hot/bootcamp.png" alt="Graphic Design Bootcamp" class="w-full">
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold mb-2">Graphic Design Bootcamp</h3>
+                    <p class="text-gray-600 mb-4">Noqo Graphic Desinger! Mudo kooban ku baro Barnaamijyada ugu Caasan ee Lagu sameeyo nashqadaha kala Duwan.</p>
+                    <p class="text-green-500 font-semibold">Applications Open!</p>
+                    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">
+                        Register Now
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+                <img src="../hot/video.png" alt="Motion Graphics Bootcamp" class="w-full">
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold mb-2">Motion Graphics & Video Editing Bootcamp</h3>
+                    <p class="text-gray-600 mb-4">Noqo Motion Graphics & Video Editor! Mudo kooban ku baro Barnaamijyada ugu Caasan ee Lagu sameeyo muuqaalada kala Duwan.</p>
+                    <p class="text-green-500 font-semibold">Applications Open!</p>
+                    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">
+                        Register Now
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+                <img src="../hot/development.png" alt="Web Development Bootcamp" class="w-full">
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold mb-2">Web Development Bootcamp</h3>
+                    <p class="text-gray-600 mb-4">Noqo Web Developer! Mudo kooban ku baro farsamada iyo xirfadaha ugu casrisan ee lagu sameeyo webka.</p>
+                    <p class="text-green-500 font-semibold">Applications Open!</p>
+                    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">
+                        Register Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 2 section waaye -->
+    <section class="py-12 px-4">
+        <div class="text-start mb-8">
+            <h2 class="text-2xl font-bold text-gray-800">
+                🎓 Choose your program, start today!
+            </h2>
+        </div>
+
+        <div class="flex space-x-6">
+            <!-- Card 1 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-500 hover:scale-105 w-80">
+                <img src="../hot/diploma.png" alt="Diploma in Computerized Accounting" class="w-full">
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold mb-2">Diploma in Computerized Accounting</h3>
+                    <p class="text-gray-600 mb-4 text-sm">Diploma in Computerized Accounting waxaad ku baran doonta Qaybaha Computerized Accounting-ka.</p>
+                    <p class="text-gray-500 font-medium text-sm">Diploma Certificate (4 courses)</p>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-500 hover:scale-105 w-80">
+                <img src="../hot/system.png" alt="Diploma in CCTV Camera & Biometric System" class="w-full">
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold mb-2">Diploma in CCTV Camera & Biometric System</h3>
+                    <p class="text-gray-600 mb-4 text-sm">Diploma in CCTV Cameras and Biometric System, oo aad ku baraneyso farsamooyinka casriga ah.</p>
+                    <p class="text-gray-500 font-medium text-sm">Diploma Certificate (3 courses)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- last section ka -->
+
+    <div class="container p-6">
+        <h2 class="text-3xl font-semibold text-start mb-8 ">Top Categories</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            
+            <!-- Card 1 -->
+            <div class="relative card bg-cover bg-center p-6 h-48 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+                 style="background-image: url('../img/1.jpg');">
+                <div class="absolute inset-0 bg-black bg-opacity-50 rounded-lg"></div>
+                <div class="relative z-10 text-white font-bold text-xl text-center">Software Development</div>
+                <div class="relative z-10 text-white mt-2 text-center">57 Courses</div>
+            </div>
+    
+            <!-- Card 2 -->
+            <div class="relative card bg-cover bg-center p-6 h-48 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+                 style="background-image: url('../img/2.jpg');">
+                <div class="absolute inset-0 bg-black bg-opacity-50 rounded-lg"></div>
+                <div class="relative z-10 text-white font-bold text-xl text-center">Web Development</div>
+                <div class="relative z-10 text-white mt-2 text-center">60 Courses</div>
+            </div>
+    
+            <!-- Card 3 -->
+            <div class="relative card bg-cover bg-center p-6 h-48 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+                 style="background-image: url('../img/3.jpg');">
+                <div class="absolute inset-0 bg-black bg-opacity-50 rounded-lg"></div>
+                <div class="relative z-10 text-white font-bold text-xl text-center">Finance & Accounting</div>
+                <div class="relative z-10 text-white mt-2 text-center">37 Courses</div>
+            </div>
+            <!-- Card 4 -->
+            <div class="relative card bg-cover bg-center p-6 h-48 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+                 style="background-image: url('../img/4.jpg');">
+                <div class="absolute inset-0 bg-black bg-opacity-50 rounded-lg"></div>
+                <div class="relative z-10 text-white font-bold text-xl text-center">Finance & Accounting</div>
+                <div class="relative z-10 text-white mt-2 text-center">37 Courses</div>
+            </div>
+            <!-- Card 5 -->
+            <div class="relative card bg-cover bg-center p-6 h-48 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+                 style="background-image: url('../img/5.jpg');">
+                <div class="absolute inset-0 bg-black bg-opacity-50 rounded-lg"></div>
+                <div class="relative z-10 text-white font-bold text-xl text-center">Finance & Accounting</div>
+                <div class="relative z-10 text-white mt-2 text-center">37 Courses</div>
+            </div>
+            <!-- Card 6 -->
+            <div class="relative card bg-cover bg-center p-6 h-48 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+                 style="background-image: url('../img/6.jpg');">
+                <div class="absolute inset-0 bg-black bg-opacity-50 rounded-lg"></div>
+                <div class="relative z-10 text-white font-bold text-xl text-center">Finance & Accounting</div>
+                <div class="relative z-10 text-white mt-2 text-center">37 Courses</div>
+            </div>
+            <!-- Card 7 -->
+            <div class="relative card bg-cover bg-center p-6 h-48 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+                 style="background-image: url(../img/7.jpg);">
+                <div class="absolute inset-0 bg-black bg-opacity-50 rounded-lg"></div>
+                <div class="relative z-10 text-white font-bold text-xl text-center">Finance & Accounting</div>
+                <div class="relative z-10 text-white mt-2 text-center">37 Courses</div>
+            </div>
+            <!-- Card 8 -->
+            <div class="relative card bg-cover bg-center p-6 h-48 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+                 style="background-image: url('../img/8.jpg');">
+                <div class="absolute inset-0 bg-black bg-opacity-50 rounded-lg"></div>
+                <div class="relative z-10 text-white font-bold text-xl text-center">Finance & Accounting</div>
+                <div class="relative z-10 text-white mt-2 text-center">37 Courses</div>
+            </div>
+            <!-- Card 9 -->
+             
+            <div class="relative card bg-cover bg-center p-6 h-48 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+                 style="background-image: url('../img/9.jpg');">
+                <div class="absolute inset-0 bg-black bg-opacity-50 rounded-lg"></div>
+                <div class="relative z-10 text-white font-bold text-xl text-center">Finance & Accounting</div>
+                <div class="relative z-10 text-white mt-2 text-center">37 Courses</div>
+            </div>
+
+            <!-- Card 10 -->
+            <div class="relative card bg-cover bg-center p-6 h-48 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+                 style="background-image: url('../img/10.jpg');">
+                <div class="absolute inset-0 bg-black bg-opacity-50 rounded-lg"></div>
+                <div class="relative z-10 text-white font-bold text-xl text-center">Finance & Accounting</div>
+                <div class="relative z-10 text-white mt-2 text-center">37 Courses</div>
+            </div>
+    
+            
+        </div>
+    </div>
+    
+</body>
+</html>
